@@ -42,8 +42,9 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    fetchProjects();
-  }, [filterStatus, search]);
+  fetchProjects();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [filterStatus, search]);
 
   const openCreate = () => {
     setEditProject(null);

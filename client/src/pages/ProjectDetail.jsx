@@ -60,8 +60,15 @@ const ProjectDetail = () => {
     }
   };
 
-  useEffect(() => { fetchProject(); }, [id]);
-  useEffect(() => { fetchTasks();   }, [id, filter]);
+  useEffect(() => {
+  fetchProject();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [id]);
+
+useEffect(() => {
+  fetchTasks();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [id, filter]);
 
   const openCreate = () => {
     setEditTask(null);
